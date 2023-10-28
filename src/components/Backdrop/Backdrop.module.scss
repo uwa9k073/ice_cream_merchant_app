@@ -1,0 +1,113 @@
+$transition-duration: 0.25s;
+$transition-type: ease;
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes pop {
+    50% {
+        transform: scale(1.2) translate(-50%, -50%);
+    }
+}
+
+@keyframes progress-stripes {
+    from {
+        background-position: 1rem 0;
+    }
+
+    to {
+        background-position: 0 0;
+    }
+}
+
+@mixin fade-animations($duration) {
+    &-enter {
+        opacity: 0;
+    }
+
+    &-enter-active {
+        opacity: 1;
+        transition: opacity #{$duration}s ease-in-out;
+    }
+
+    &-exit {
+        opacity: 1;
+    }
+
+    &-exit-active {
+        opacity: 0;
+        transition: opacity #{$duration}s ease-in-out;
+    }
+}
+
+@mixin slide-y-animation($duration) {
+    &-enter {
+        transform: scaleY(0);
+        overflow: hidden;
+    }
+
+    &-enter-active {
+        transform: scaleY(1);
+        transition: all 0.2s;
+        transform-origin: 50% 0;
+        will-change: transform;
+    }
+
+    &-exit {
+        transform: scaleY(1);
+    }
+
+    &-exit-active {
+        transform: scaleY(0);
+        transition: all 0.2s;
+        transform-origin: 50% 0;
+        will-change: transform;
+    }
+}
+
+
+.component {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.appear,
+.enter {
+    background-color: transparent;
+}
+
+.appearActive,
+.enterActive,
+.appearDone,
+.enterDone {
+    background-color: #00000099;
+    transition: background-color var(--ep-impl-fade-animation) ease-in;
+}
+
+.exit {
+    background-color: #00000099;
+}
+
+.exitActive,
+.exitDone {
+    background-color: transparent;
+    transition: background-color var(--ep-impl-fade-animation) ease-out;
+}

@@ -1,0 +1,8 @@
+@import "../../styles/screen";
+
+.main {
+    max-width: $small-pc-device;
+    margin: auto;
+    padding: 1em;
+    // background-color: var(--ep-color-secondary);
+}

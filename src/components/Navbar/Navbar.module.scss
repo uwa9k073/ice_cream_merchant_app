@@ -1,0 +1,71 @@
+@import "../../styles/screen";
+
+.header {
+    position: sticky;
+    top: 0;
+    font-size: 1em;
+    padding: 1em;
+    font-weight: 700;
+    z-index: 3;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: $small-pc-device;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbarMobileItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25em 1em;
+    gap: 1em;
+    // width: 100%;
+    border-radius: 0.75em;
+
+    &:hover {
+        background-color: var(--ep-item-hovered);
+    }
+}
+
+.navbarMobile {
+    transform: translateX(100%);
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--ep-background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 65%;
+    height: 100%;
+    transition: transform .5s ease;
+    padding: 1em;
+
+    &Open {
+        transform: translateX(0);
+    }
+
+    gap: 1em;
+}
+
+.navbar {
+    display: flex;
+    gap: 1em;
+    padding: 1em;
+    transition: all .25s ease;
+
+    @media screen and (max-width: $large-mobile-device) {
+        display: none;
+    }
+}
+
+.burgerBtn {
+    visibility: hidden;
+
+    @media screen and (max-width: $large-mobile-device) {
+        visibility: visible;
+    }
+}

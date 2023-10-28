@@ -1,0 +1,14 @@
+.bottomDrawer {
+    z-index: 3;
+    width: 100%;
+}
+
+.image {
+    height: 300px;
+    max-width: 500px;
+
+    img {
+        width: 100%;
+        border-radius: .75em;
+    }
+}
