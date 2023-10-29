@@ -1,14 +1,10 @@
-.bottomDrawer {
+@import "../../styles/screen";
+
+.wrapper {
     z-index: 3;
-    width: 100%;
-}
 
-.image {
-    height: 300px;
-    max-width: 500px;
-
-    img {
+    @media screen and (max-width: $large-mobile-device) {
         width: 100%;
-        border-radius: .75em;
+
     }
 }

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { INavbarProps } from "./Navbar";
-import styles from "./Navbar.module.scss"
+import { INavbarProps } from "./index";
+import styles from "./NavbarMobile.module.scss"
 import logo from "../../../public/logo.svg"
-import { Avatar, Button } from "@adev/ui-kit";
+import { Avatar, Button, Text } from "@adev/ui-kit";
 import { useState } from "react";
 import clsx from "clsx";
 import Backdrop from "../Backdrop/Backdrop";
@@ -25,7 +25,8 @@ const NavbarMobile = ({ items }: INavbarProps) => {
                     <Link className={styles.navbarMobileItem} to={item.path}>
                         <span className="material-symbols-outlined">
                             {item.icon}
-                        </span><div>{item.name}</div></Link>
+                        </span>
+                        <Text typography="headline-sm">{item.name}</Text></Link>
                 ))}</div>
 
         </div>
