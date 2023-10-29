@@ -3,13 +3,25 @@ import styles from "./ProductView.module.scss"
 import { IProduct } from "../../pages/Products"
 import { IProductViewProps } from ".";
 import Review from "../Review";
+import { ICartProduct } from "../../pages/Cart";
 
 
 const ProductView = ({ product, reviews }: IProductViewProps) => {
     const addToCard = (product: IProduct) => {
-        const existingItems: IProduct[] = JSON.parse(localStorage.getItem("products") || "[]");
-        const updatedList: IProduct[] = [...existingItems, product];
-        localStorage.setItem("products", JSON.stringify(updatedList));
+        let existingItems: ICartProduct[] = JSON.parse(localStorage.getItem("products") || "[]");
+        let flag = false;
+        existingItems.forEach((cartProduct) => {
+            if (cartProduct.product = product) {
+                cartProduct.count += 1;
+                flag = true;
+            }
+        });
+        if (!flag) {
+            const updatedList: ICartProduct[] = [...existingItems, { product: product, count: 1 }];
+            localStorage.setItem("products", JSON.stringify(updatedList));
+        } else {
+            localStorage.setItem("products", JSON.stringify(existingItems));
+        }
     }
     console.log(reviews);
     return (<>

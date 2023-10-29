@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client'
 import Products from './pages/Products/index.ts'
 import './styles/global.scss'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Bucket from './pages/Bucket.tsx'
 import About from './pages/About.tsx'
+import Cart from './pages/Cart/index.ts';
 
 const router = createBrowserRouter([
   {
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/ice_cream_merchant_app/cart",
-    element: <><Bucket></Bucket></>
+    element: <><Cart></Cart></>
   },
   {
     path: "/ice_cream_merchant_app/about",
