@@ -8,7 +8,7 @@ import About from './pages/About.tsx'
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/ice_cream_merchant_app",
     element: (
       <>
         <Products />
@@ -16,11 +16,11 @@ const router = createBrowserRouter([
     )
   },
   {
-    path: "/cart",
+    path: "/ice_cream_merchant_app/cart",
     element: <><Bucket></Bucket></>
   },
   {
-    path: "/about",
+    path: "/ice_cream_merchant_app/about",
     element: <><About></About></>
   }
 ]);

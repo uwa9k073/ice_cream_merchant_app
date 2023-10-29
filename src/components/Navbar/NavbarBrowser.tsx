@@ -8,7 +8,7 @@ import { Text } from "@adev/ui-kit";
 
 const NavbarBrowser = ({ items }: INavbarProps) => {
     return (<div className={styles.wrapper}>
-        <Link to={"/"}><img src={logo} style={{ width: 48, height: 48, color: "var(--ep-color-primary)" }}></img></Link>
+        <Link to={"/ice_cream_merchant_app"}><img src={logo} style={{ width: 48, height: 48, color: "var(--ep-color-primary)" }}></img></Link>
         <div>
             <div className={styles.navbar}>
                 {items.map((item) => (<Link to={item.path}>
