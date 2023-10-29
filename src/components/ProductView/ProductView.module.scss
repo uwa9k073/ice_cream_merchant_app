@@ -1,0 +1,31 @@
+@import "../../styles/screen";
+
+.wrapper {
+    max-width: 700px;
+    padding: 1em;
+    display: flex;
+    gap: 1em;
+
+    img {
+        width: 50%;
+        height: 50%;
+        border-radius: 0.75em;
+    }
+
+    @media screen and (max-width: $large-mobile-device) {
+        flex-direction: column;
+    }
+}
+
+.box {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.reviews {
+    height: 40%;
+    width: 100%;
+    overflow: auto;
+}
