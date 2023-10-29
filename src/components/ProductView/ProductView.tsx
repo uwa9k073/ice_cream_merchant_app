@@ -16,13 +16,16 @@ const ProductView = ({ product, reviews }: IProductViewProps) => {
         <div className={styles.wrapper}>
             <img src={product?.img_src} alt={product?.img_alt}></img>
             <div className={styles.box}>
-                <Text typography="headline-md">{product?.name}</Text>
+                <Text typography="headline-xl" weight="bold">{product?.name}</Text>
                 <Text typography="body-long-md">{product?.description}</Text>
                 <Button onClick={() => addToCard}><span className="material-symbols-outlined">
                     add_shopping_cart
                 </span>{product?.price}₽</Button>
-                <div className={styles.reviews}>
-                    {reviews?.map((review) => (<Review review={review}></Review>))}
+                <div>
+                    <Text typography="headline-lg" weight="bold">Отзывы</Text>
+                    <div>
+                        {reviews?.map((review) => (<Review review={review}></Review>))}
+                    </div>
                 </div>
             </div>
         </div>

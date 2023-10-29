@@ -10,7 +10,7 @@ const Review = ({ review }: IReviewProps) => {
     return (
         <>
             <div className={styles.wrapper}>
-                <Text typography="headline-md">{review.userName}</Text>
+                <Text typography="headline-md" weight="bold">{review.userName}</Text>
                 <Text typography="body-long-sm">{review.text}</Text>
                 <div>
                     <Button size="xs">
