@@ -23,7 +23,7 @@ const Product = ({ product, onClick }: IProductProps) => {
             <Island className={styles.island}>
                 <div className={styles.wrapper} onClick={() => { onClick(product) }}>
                     <img src={product.img_src} alt={product.img_alt}></img>
-                    <Text typography="headline-md">{product.name}</Text>
+                    <Text typography="headline-md" overflow="ellipsis">{product.name}</Text>
                 </div>
                 <Button onClick={() => addToCard(product)}>
                     <span className="material-symbols-outlined">

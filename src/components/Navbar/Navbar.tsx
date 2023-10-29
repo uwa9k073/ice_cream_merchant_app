@@ -6,7 +6,7 @@ import { NavbarMobile } from "./NavbarMobile";
 
 export default function NavBar() {
 
-    const items = [{ path: "/cart", name: "Корзина", icon: "shopping_cart" }, { path: "/reviews", name: "Отзывы", icon: "reviews" }, { path: "/about", name: "О нас", icon: "contacts" }]
+    const items = [{ path: "/cart", name: "Корзина", icon: "shopping_cart" }, { path: "/about", name: "О нас", icon: "contacts" }]
 
     return (
         <header className={styles.header}>

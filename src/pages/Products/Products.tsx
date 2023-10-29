@@ -14,6 +14,7 @@ const Products = () => {
     { name: "Малиновое мороженое", img_src: "https://res.cloudinary.com/dixvycrtj/image/upload/v1696806310/raspberry-ice-cream_vqynkp.png", img_alt: "Черничное мороженое", description: "", price: 149.99 },
     { name: "Клубничное мороженое", img_src: "https://res.cloudinary.com/dixvycrtj/image/upload/v1696806310/strawberry-ice-cream_wl1lly.png", img_alt: "Черничное мороженое", description: "", price: 149.99 },
     { name: "Ванильное мороженое", img_src: "https://res.cloudinary.com/dixvycrtj/image/upload/v1696806310/kandinsky-download-1696791439312_tg13oy.png", img_alt: "Черничное мороженое", description: "", price: 149.99 }]
+    const reviews = [{ userName: "Clown Buggy", text: "Best of the bests" }, { userName: "Donqihuote Doflamingo", text: "I spend all my money on that" }, { userName: "Dracule Mihawk", text: "unbelievable" }];
     return (<>
         <Page>
             <Row justify="left">
@@ -22,12 +23,12 @@ const Products = () => {
         </Page>
         <BrowserView>
             <Dialog rootClassName={styles.wrapper} open={product != undefined} onClose={() => { setProduct(undefined) }} noHeader>
-                <ProductView product={product} />
+                <ProductView product={product} reviews={reviews} />
             </Dialog>
         </BrowserView>
         <MobileView>
             <BottomDrawer className={styles.wrapper} open={product != undefined} onClose={() => { setProduct(undefined) }}>
-                <ProductView product={product} />
+                <ProductView product={product} reviews={reviews} />
             </BottomDrawer>
         </MobileView>
     </>)

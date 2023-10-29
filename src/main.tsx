@@ -4,8 +4,6 @@ import Products from './pages/Products/index.ts'
 import './styles/global.scss'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Bucket from './pages/Bucket.tsx'
-import Reviews from './pages/Reviews.tsx'
-import Contacts from './pages/Contacts.tsx'
 import About from './pages/About.tsx'
 
 const router = createBrowserRouter([
@@ -20,14 +18,6 @@ const router = createBrowserRouter([
   {
     path: "/cart",
     element: <><Bucket></Bucket></>
-  },
-  {
-    path: "/reviews",
-    element: <><Reviews></Reviews></>
-  },
-  {
-    path: "/contacts",
-    element: <><Contacts></Contacts></>
   },
   {
     path: "/about",
