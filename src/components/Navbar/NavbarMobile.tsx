@@ -11,7 +11,7 @@ const NavbarMobile = ({ items }: INavbarProps) => {
     const [open, setOpen] = useState(false);
 
     return (<div className={styles.wrapper}>
-        <Link to={"/"}><img src={logo} style={{ width: 48, height: 48, color: "var(--ep-color-primary)" }}></img></Link>
+        <Link to={"/ice_cream_merchant_app"}><img src={logo} style={{ width: 48, height: 48, color: "var(--ep-color-primary)" }}></img></Link>
         <div>
             <Button view="clear" onClick={() => {
                 setOpen(!open)
