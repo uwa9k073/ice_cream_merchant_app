@@ -1,0 +1,19 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    gap: 3em;
+}
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    // justify-content: center;
+    align-items: center;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
