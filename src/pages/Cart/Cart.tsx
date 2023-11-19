@@ -20,7 +20,7 @@ const Cart = () => {
                             <Button onClick={() => sortAsc()}>Отсортировать по возрастанию</Button>
                             <Button onClick={() => sortDesc()}>Отсортировать по убыванию</Button>
                         </div>
-                        <div>
+                        <div className={styles.productsContainer}>
                             {cart?.map((item) => (<CartItem product={item.product} count={item.count}></CartItem>))}
                         </div>
                         <div className={styles.aside}>

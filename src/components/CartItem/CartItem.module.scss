@@ -1,56 +1,51 @@
 @import "../../styles/screen";
 
-.wrapper {
-    display: flex;
-    // fle
-    gap: 1em;
-    width: 100%;
-    padding: 1em;
-    justify-content: space-between;
 
-    @media screen and (max-width: $large-mobile-device) {
-        flex-direction: column;
+
+
+
+
+.container {
+    background: var(--ep-box-background-color);
+    border-radius: 0.75em;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1em;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+
+    img {
+        min-width: 150px;
+        width: 100%;
+        border-radius: 0.75em;
     }
 }
 
 .box {
     display: flex;
+    flex-direction: row;
     gap: 1em;
-    padding: 1em;
+}
+
+.priceBox {
+    display: flex;
     align-items: center;
+}
+
+.content {
+    display: flex;
     flex-direction: column;
-}
-
-
-
-
-.row {
-    background: var(--ep-box-background-color);
-    border-radius: 0.75em;
-    margin: 1em auto;
-}
-
-img {
-    width: 50%;
-    border-radius: 0.75em;
-
-    @media screen and (max-width: $large-tablet-device) {
-        width: 90%;
-    }
+    justify-content: space-between;
 }
 
 
 .buttons {
     display: flex;
-    flex-direction: row;
-    gap: .5em;
+    gap: .7em;
     align-items: center;
-    // justify-content: center;
-}
-
-.delete_wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
 }
