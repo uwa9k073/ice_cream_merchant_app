@@ -8,7 +8,7 @@ interface CartState {
     cart: ICartProduct[]
     isLoading: boolean
     totalPrice: number
-    addProduct: (product: IProduct) => void
+    addProduct: (product: IProduct | undefined) => void
     removeProduct: (name: string) => void
     clearCart: () => void
     increaseProductCount: (name: string) => void
@@ -22,18 +22,20 @@ const useCartStore = create<CartState>()(persist(devtools((set, get) => ({
     cart: [],
     isLoading: false,
     totalPrice: 0,
-    addProduct: (product: IProduct) => {
-        const existingCartItem = get().cart.find((item) => item.product.name === product.name);
-        if (!existingCartItem) {
-            set({
-                cart: [...get().cart, { product: product, count: 1 }],
-                totalPrice: get().totalPrice + product.price
-            });
-        } else {
-            set({
-                cart: get().cart.map((item) => item.product.name === existingCartItem.product.name ? { product: item.product, count: item.count + 1 } : item),
-                totalPrice: existingCartItem.product.price + get().totalPrice
-            });
+    addProduct: (product: IProduct | undefined) => {
+        if (product) {
+            const existingCartItem = get().cart.find((item) => item.product.name === product.name);
+            if (!existingCartItem) {
+                set({
+                    cart: [...get().cart, { product: product, count: 1 }],
+                    totalPrice: get().totalPrice + product.price
+                });
+            } else {
+                set({
+                    cart: get().cart.map((item) => item.product.name === existingCartItem.product.name ? { product: item.product, count: item.count + 1 } : item),
+                    totalPrice: existingCartItem.product.price + get().totalPrice
+                });
+            }
         }
     },
     removeProduct: (name: string) => {
