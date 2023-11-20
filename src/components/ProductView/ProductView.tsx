@@ -2,10 +2,11 @@ import { Button, Text } from "@adev/ui-kit"
 import styles from "./ProductView.module.scss"
 import { IProductViewProps } from ".";
 import Review from "../Review";
-import { addToCart } from "../../pages/Products";
+import useCartStore from "../../stores/cart";
 
 
 const ProductView = ({ product, reviews }: IProductViewProps) => {
+    const addToCart = useCartStore(state => state.addProduct)
     return (<>
         <div className={styles.wrapper}>
             <img src={product?.img_src} alt={product?.img_alt}></img>
