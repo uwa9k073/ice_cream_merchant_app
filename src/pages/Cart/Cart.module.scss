@@ -1,0 +1,33 @@
+@import "../../styles/screen";
+
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+
+    @media screen and (max-width: $large-laptop-device) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: $large-tablet-device) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+.lsb,
+.rsb {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    background: var(--ep-box-background-color);
+    padding: 1em;
+    border-radius: .75em;
+}
+
+.productsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}

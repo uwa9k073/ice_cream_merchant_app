@@ -1,0 +1,65 @@
+@import "../../styles/screen";
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    background: var(--ep-box-background-color);
+    padding: 1em;
+    border-radius: .75em;
+    gap: 1em;
+
+    @media screen and (max-width: $small-pc-device) {
+        flex-direction: column;
+    }
+}
+
+.wrapper {
+    display: flex;
+    gap: 1em;
+    padding: 1em;
+
+    img {
+        width: 100%;
+        border-radius: .75em;
+        min-width: 100px;
+        max-width: 300px;
+    }
+
+
+    @media screen and (max-width: $small-pc-device) {
+        flex-direction: column;
+
+        img {
+            min-width: none;
+        }
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.box {
+    display: flex;
+    padding: 1em;
+    gap: 1em;
+}
+
+.priceBox {
+    display: flex;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+
+
+    @media screen and (max-width: $small-pc-device) {
+        justify-content: center;
+    }
+}

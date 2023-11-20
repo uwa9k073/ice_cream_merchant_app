@@ -20,7 +20,7 @@ const NavbarMobile = ({ items }: INavbarProps) => {
             </span>}></Button>
             <Backdrop duration={500} open={open} onClick={() => { setOpen(false) }}></Backdrop>
             <div className={clsx(styles.navbarMobile, open && styles.navbarMobileOpen)}>
-                <Avatar text={"hui vrot"}></Avatar>
+                <Avatar text={"John Doe"}></Avatar>
                 {items.map((item) => (
                     <Link className={styles.navbarMobileItem} to={item.path}>
                         <span className="material-symbols-outlined">
