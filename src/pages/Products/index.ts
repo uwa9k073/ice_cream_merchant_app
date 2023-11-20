@@ -1,4 +1,3 @@
-import { ICartProduct } from "../Cart";
 import { Products } from "./Products";
 
 export interface IProduct {
