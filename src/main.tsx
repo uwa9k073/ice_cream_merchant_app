@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Products from './pages/Products/index.ts'
+import Products from './pages/Products'
 import './styles/global.scss'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import About from './pages/About.tsx'
-import Cart from './pages/Cart/index.ts';
+import Cart from './pages/Cart';
+import AboutUs from './pages/AboutUs';
 
 const router = createBrowserRouter([
   {
@@ -17,11 +17,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/ice_cream_merchant_app/cart",
-    element: <><Cart></Cart></>
+    element: <><Cart /></>
   },
   {
     path: "/ice_cream_merchant_app/about",
-    element: <><About></About></>
+    element: <><AboutUs /></>
   }
 ]);
 
