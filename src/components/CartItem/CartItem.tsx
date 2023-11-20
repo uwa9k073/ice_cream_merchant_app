@@ -11,7 +11,9 @@ const CartItem = (item: ICartProduct) => {
         <>
             <div className={styles.container}>
                 <div className={styles.wrapper}>
-                    <img src={item.product.img_src} alt={item.product.img_alt} />
+                    <div>
+                        <img src={item.product.img_src} alt={item.product.img_alt} />
+                    </div>
                     <div className={styles.content}>
                         <Text typography="headline-md">{item.product.name}</Text>
                         <div className={styles.box}>
@@ -20,7 +22,8 @@ const CartItem = (item: ICartProduct) => {
                         </div>
                     </div>
                     <div className={styles.priceBox}>
-                        <Text typography="headline-md">Цена: {item.product.price * item.count}₽</Text></div>
+                        <Text typography="headline-md">Цена: {item.product.price * item.count}₽</Text>
+                    </div>
                 </div>
                 <div className={styles.buttons}>
                     <Button contentLeft="-" size="md" onClick={() => decrementItemCount(item.product.name)} disabled={item.count > 1 ? false : true}></Button>
