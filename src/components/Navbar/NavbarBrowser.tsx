@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./Navbar.module.scss"
 import logo from "../../../public/logo.svg"
 import { INavbarProps } from "./index";
-import { Text } from "@adev/ui-kit";
+import { Avatar, Text } from "@adev/ui-kit";
 
 
 
@@ -19,6 +19,7 @@ const NavbarBrowser = ({ items }: INavbarProps) => {
                         <Text typography="headline-sm">{item.name}</Text>
                     </div>
                 </Link>))}
+                <Avatar text={"John Doe"}></Avatar>
             </div>
         </div>
     </div>);
