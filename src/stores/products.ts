@@ -6,7 +6,6 @@ interface ProductsState {
     products: IProduct[]
     isLoading: boolean
     toggleFavorite: (name: string) => void
-    takeProduct: (name: string) => IProduct | undefined
 }
 
 const useProductsStore = create<ProductsState>()(persist(devtools((set, get) => ({
@@ -23,9 +22,6 @@ const useProductsStore = create<ProductsState>()(persist(devtools((set, get) => 
             products: get().products.map((item) => item.name === name ? { name: item.name, img_src: item.img_src, img_alt: item.img_alt, description: item.description, price: item.price, isFavorite: !item.isFavorite } : item)
         })
     },
-
-    takeProduct: (name: string) => get().products.find(item => item.name === name)
-
 })), { name: 'productsStore', version: 1, getStorage: () => localStorage }))
 
 
