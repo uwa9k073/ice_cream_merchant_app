@@ -6,6 +6,7 @@ export interface IProduct {
     img_alt: string;
     description: string;
     price: number;
+    isFavorite: boolean
 }
 
 export default Products;

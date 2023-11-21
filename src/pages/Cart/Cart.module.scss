@@ -13,6 +13,9 @@
     @media screen and (max-width: $large-tablet-device) {
         grid-template-columns: repeat(1, 1fr);
     }
+
+    padding: 1em;
+    margin: 0 1em;
 }
 
 

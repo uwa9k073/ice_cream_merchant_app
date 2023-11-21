@@ -1,0 +1,9 @@
+@import "../../styles/screen";
+
+.wrapper {
+    z-index: 3;
+
+    @media screen and (max-width: $large-mobile-device) {
+        width: 100%;
+    }
+}

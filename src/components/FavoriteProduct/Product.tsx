@@ -27,10 +27,10 @@ const Product = ({ product, onClick }: IProductProps) => {
                     </span>{product.price}₽</Button>
                 <Button onClick={() => toggleFavorite(product.name)}>
                     <span className="material-symbols-outlined">
-                        {!product.isFavorite ? "favorite" : "heart_minus"}
+                        heart_minus
                     </span></Button>
             </Island>
-        </Column >)
+        </Column>)
 }
 
 export { Product };

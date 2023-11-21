@@ -10,8 +10,13 @@ import useProductsStore from "../../stores/products";
 
 const Products = () => {
     const [product, setProduct] = useState<IProduct | undefined>(undefined);
+
     const products = useProductsStore(state => state.products);
-    const reviews = [{ userName: "Clown Buggy", text: "Best of the bests" }, { userName: "Donqihuote Doflamingo", text: "I spend all my money on that" }, { userName: "Dracule Mihawk", text: "unbelievable" }];
+
+    const reviews = [{ userName: "Clown Buggy", text: "Best of the bests" },
+    { userName: "Donqihuote Doflamingo", text: "I spend all my money on that" },
+    { userName: "Dracule Mihawk", text: "unbelievable" }];
+
     return (<>
         <Page>
             <Row justify="left">
