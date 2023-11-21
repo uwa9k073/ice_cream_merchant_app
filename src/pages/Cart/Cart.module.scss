@@ -5,17 +5,17 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1em;
+    padding: 1em;
+    margin: 0 auto;
 
     @media screen and (max-width: $large-laptop-device) {
         grid-template-columns: repeat(2, 1fr);
     }
 
     @media screen and (max-width: $large-tablet-device) {
+        justify-content: center;
         grid-template-columns: repeat(1, 1fr);
     }
-
-    padding: 1em;
-    margin: 0 auto;
 }
 
 
