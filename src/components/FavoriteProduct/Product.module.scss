@@ -1,0 +1,16 @@
+.island {
+    padding: 1em;
+    gap: 1em;
+    margin: 1em 0.5em;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    img {
+        width: 100%;
+        border-radius: 0.75em;
+    }
+}

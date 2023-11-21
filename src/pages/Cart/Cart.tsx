@@ -32,7 +32,9 @@ const Cart = () => {
     }
 
     return (<><Page>
-        <Text typography="headline-xl"> Ваша корзина пуста</Text>
+        <div className={styles.empty}>
+            <Text typography="headline-xl" weight="light"> Ваша корзина пуста</Text>
+        </div>
     </Page></>)
 }
 

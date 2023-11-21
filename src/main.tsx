@@ -5,6 +5,7 @@ import './styles/global.scss'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Cart from './pages/Cart';
 import AboutUs from './pages/AboutUs';
+import Favorites from './pages/Favorites';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/ice_cream_merchant_app/about",
     element: <><AboutUs /></>
+  },
+  {
+    path: "/ice_cream_merchant_app/favorites",
+    element: <><Favorites /></>
   }
 ]);
 

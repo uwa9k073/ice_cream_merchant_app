@@ -3,32 +3,32 @@ import { ICartProduct } from "../../pages/Cart";
 import styles from "./CartItem.module.scss"
 import useCartStore from "../../stores/cart";
 
-const CartItem = (item: ICartProduct) => {
-    const decrementItemCount = useCartStore(state => state.decreaseProductCount);
-    const incrementItemCount = useCartStore(state => state.increaseProductCount);
-    const removeProduct = useCartStore(state => state.removeProduct);
+const CartItem = ({ product, count }: ICartProduct) => {
+    const [decrementItemCount, incrementItemCount, removeProduct] =
+        useCartStore(state => [state.decreaseProductCount,
+        state.increaseProductCount, state.removeProduct]);
+
     return (
         <>
             <div className={styles.container}>
                 <div className={styles.wrapper}>
                     <div>
-                        <img src={item.product.img_src} alt={item.product.img_alt} />
+                        <img src={product.img_src} alt={product.img_alt} />
                     </div>
                     <div className={styles.content}>
-                        <Text typography="headline-md">{item.product.name}</Text>
+                        <Text typography="headline-md">{product.name}</Text>
                         <div className={styles.box}>
-                            <Button onClick={() => removeProduct(item.product.name)} size="xs"><span className="material-symbols-outlined">delete</span></Button>
-                            <Button size="xs"><span className="material-symbols-outlined">favorite</span></Button>
+                            <Button onClick={() => removeProduct(product.name)} size="sm"><span className="material-symbols-outlined">delete</span></Button>
                         </div>
                     </div>
                     <div className={styles.priceBox}>
-                        <Text typography="headline-md">Цена: {item.product.price * item.count}₽</Text>
+                        <Text typography="headline-md">Цена: {product.price * count}₽</Text>
                     </div>
                 </div>
                 <div className={styles.buttons}>
-                    <Button contentLeft="-" size="md" onClick={() => decrementItemCount(item.product.name)} disabled={item.count > 1 ? false : true}></Button>
-                    <Text typography="headline-lg">{item.count}</Text>
-                    <Button contentLeft="+" size="md" onClick={() => incrementItemCount(item.product.name)}></Button>
+                    <Button contentLeft="-" size="md" onClick={() => decrementItemCount(product.name)} disabled={count > 1 ? false : true}></Button>
+                    <Text typography="headline-lg">{count}</Text>
+                    <Button contentLeft="+" size="md" onClick={() => incrementItemCount(product.name)}></Button>
                 </div>
             </div>
         </>)
