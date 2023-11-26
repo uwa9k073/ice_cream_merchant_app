@@ -6,6 +6,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Cart from './pages/Cart';
 import AboutUs from './pages/AboutUs';
 import Favorites from './pages/Favorites';
+import SignIn from './pages/SignIn/SignIn';
+import SignUp from './pages/SignUp/SignUp';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,11 @@ const router = createBrowserRouter([
   {
     path: "/ice_cream_merchant_app/favorites",
     element: <><Favorites /></>
+  }, {
+    path: '/ice_cream_merchant_app/signin',
+    element: <><SignIn /></>
+  }, {
+    path: '/ice_cream_merchant_app/signup', element: <><SignUp /></>
   }
 ]);
 
