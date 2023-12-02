@@ -22,7 +22,7 @@ const useProductsStore = create<ProductsState>()(persist(devtools((set, get) => 
             products: get().products.map((item) => item.name === name ? { name: item.name, img_src: item.img_src, img_alt: item.img_alt, description: item.description, price: item.price, isFavorite: !item.isFavorite } : item)
         })
     },
-})), { name: 'productsStore', version: 1, getStorage: () => localStorage }))
+})), { name: 'productsStore', version: 1 }))
 
 
 export default useProductsStore;
