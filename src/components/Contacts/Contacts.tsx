@@ -7,11 +7,11 @@ const Contacts = () => {
             <div className={styles.wrapper}>
                 <div className={styles.contacts}>
                     <Text typography="headline-md" weight='light' >
-                        <Phone></Phone> +7 (999) 999-99-99
+                        <Phone /> +7 (916) 701-64-34 - Главный менеджер Орлов Константин Борисович ИКБО-16-22
                     </Text>
                     <br />
                     <Text typography="headline-md" weight='light' >
-                        <Email></Email> yynm@gmail.com
+                        <Email /> yynm@gmail.com
                     </Text>
                 </div>
                 <div className={styles.social_networks}>
