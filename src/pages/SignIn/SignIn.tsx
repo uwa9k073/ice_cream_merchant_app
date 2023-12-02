@@ -37,8 +37,12 @@ const SignIn: React.FC = () => {
                             </div>
                         </div>
                         <div className={styles.button_container}>
-                            <Button className="submit" onClick={handleSubmit}>Отправить</Button>
-                            <Link to='/ice_cream_merchant_app/signup'><Button className="signup">Пройти регистрацию</Button></Link>
+                            <Link to={'/'}>
+                                <Button className="submit" onClick={handleSubmit}>Отправить</Button>
+                            </Link>
+                            <Link to='/signup'>
+                                <Button className="signup">Пройти регистрацию</Button>
+                            </Link>
                         </div>
                     </form>
                 </div>

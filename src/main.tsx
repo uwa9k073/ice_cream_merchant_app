@@ -2,16 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Products from './pages/Products'
 import './styles/global.scss'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createHashRouter } from 'react-router-dom';
 import Cart from './pages/Cart';
 import AboutUs from './pages/AboutUs';
 import Favorites from './pages/Favorites';
 import SignIn from './pages/SignIn/SignIn';
 import SignUp from './pages/SignUp/SignUp';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
-    path: "/ice_cream_merchant_app",
+    path: "/",
     element: (
       <>
         <Products />
@@ -19,21 +19,21 @@ const router = createBrowserRouter([
     )
   },
   {
-    path: "/ice_cream_merchant_app/cart",
+    path: "/cart",
     element: <><Cart /></>
   },
   {
-    path: "/ice_cream_merchant_app/about",
+    path: "/about",
     element: <><AboutUs /></>
   },
   {
-    path: "/ice_cream_merchant_app/favorites",
+    path: "/favorites",
     element: <><Favorites /></>
   }, {
-    path: '/ice_cream_merchant_app/signin',
+    path: '/signin',
     element: <><SignIn /></>
   }, {
-    path: '/ice_cream_merchant_app/signup', element: <><SignUp /></>
+    path: '/signup', element: <><SignUp /></>
   }
 ]);
 
