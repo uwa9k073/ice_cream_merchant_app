@@ -6,14 +6,14 @@ import useCartStore from "../../stores/cart";
 
 
 const ProductView = ({ product, reviews }: IProductViewProps) => {
-    const addToCart = useCartStore(state => state.addProduct)
+    const { addProduct } = useCartStore()
     return (<>
         <div className={styles.wrapper}>
             <img src={product?.img_src} alt={product?.img_alt}></img>
             <div className={styles.box}>
                 <Text typography="headline-xl" weight="bold">{product?.name}</Text>
                 <Text typography="body-long-md">{product?.description}</Text>
-                <Button onClick={() => addToCart(product)}><span className="material-symbols-outlined">
+                <Button onClick={() => addProduct(product)}><span className="material-symbols-outlined">
                     add_shopping_cart
                 </span>{product?.price}₽</Button>
                 <div>

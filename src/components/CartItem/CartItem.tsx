@@ -4,9 +4,8 @@ import styles from "./CartItem.module.scss"
 import useCartStore from "../../stores/cart";
 
 const CartItem = ({ product, count }: ICartProduct) => {
-    const [decrementItemCount, incrementItemCount, removeProduct] =
-        useCartStore(state => [state.decreaseProductCount,
-        state.increaseProductCount, state.removeProduct]);
+    const { decreaseProductCount, increaseProductCount, removeProduct } =
+        useCartStore();
 
     return (
         <>
@@ -26,9 +25,9 @@ const CartItem = ({ product, count }: ICartProduct) => {
                     </div>
                 </div>
                 <div className={styles.buttons}>
-                    <Button contentLeft="-" size="md" onClick={() => decrementItemCount(product.name)} disabled={count > 1 ? false : true}></Button>
+                    <Button contentLeft="-" size="md" onClick={() => decreaseProductCount(product.name)} disabled={count > 1 ? false : true}></Button>
                     <Text typography="headline-lg">{count}</Text>
-                    <Button contentLeft="+" size="md" onClick={() => incrementItemCount(product.name)}></Button>
+                    <Button contentLeft="+" size="md" onClick={() => increaseProductCount(product.name)}></Button>
                 </div>
             </div>
         </>)

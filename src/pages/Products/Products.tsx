@@ -11,7 +11,7 @@ import useProductsStore from "../../stores/products";
 const Products = () => {
     const [product, setProduct] = useState<IProduct | undefined>(undefined);
 
-    const products = useProductsStore(state => state.products);
+    const { products } = useProductsStore();
 
     const reviews = [{ userName: "Clown Buggy", text: "Best of the bests" },
     { userName: "Donqihuote Doflamingo", text: "I spend all my money on that" },
@@ -24,7 +24,7 @@ const Products = () => {
             </Row>
         </Page>
         <BrowserView>
-            <Dialog rootClassName={styles.wrapper} open={product != undefined} onClose={() => { setProduct(undefined) }} noHeader>
+            <Dialog rootClassName={styles.wrapper} open={product != undefined} onClose={() => { setProduct(undefined) }} noHeader verticalAlign="center">
                 <ProductView product={product} reviews={reviews} />
             </Dialog>
         </BrowserView>

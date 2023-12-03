@@ -10,8 +10,8 @@ interface IProductProps {
 }
 
 const Product = ({ product, onClick }: IProductProps) => {
-    const addToCart = useCartStore(state => state.addProduct);
-    const toggleFavorite = useProductsStore(state => state.toggleFavorite);
+    const { addProduct } = useCartStore();
+    const { toggleFavorite } = useProductsStore();
     return (
         <Column width={{
             mobile: 12, tablet: 6, desktop: 3
@@ -21,7 +21,7 @@ const Product = ({ product, onClick }: IProductProps) => {
                     <img src={product.img_src} alt={product.img_alt}></img>
                     <Text typography="headline-md" overflow="ellipsis">{product.name}</Text>
                 </div>
-                <Button onClick={() => addToCart(product)}>
+                <Button onClick={() => addProduct(product)}>
                     <span className="material-symbols-outlined">
                         add_shopping_cart
                     </span>{product.price}₽</Button>

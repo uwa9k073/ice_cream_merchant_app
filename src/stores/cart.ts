@@ -13,8 +13,6 @@ interface CartState {
     clearCart: () => void
     increaseProductCount: (name: string) => void
     decreaseProductCount: (name: string) => void
-    sortAsc: () => void
-    sortDesc: () => void
 }
 
 
@@ -60,8 +58,6 @@ const useCartStore = create<CartState>()(persist(devtools((set, get) => ({
         cart: [],
         totalPrice: 0
     }),
-    sortAsc: () => set({ cart: get().cart.sort((a, b) => a.count * a.product.price - b.count * b.product.price) }),
-    sortDesc: () => set({ cart: get().cart.sort((a, b) => b.count * b.product.price - a.count * a.product.price) }),
     increaseProductCount: (name: string) => {
         const existingCartItem = get().cart.find((item => item.product.name === name));
         if (existingCartItem) {
