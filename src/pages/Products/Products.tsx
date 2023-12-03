@@ -24,7 +24,7 @@ const Products = () => {
             </Row>
         </Page>
         <BrowserView>
-            <Dialog rootClassName={styles.wrapper} open={product != undefined} onClose={() => { setProduct(undefined) }} noHeader>
+            <Dialog rootClassName={styles.wrapper} open={product != undefined} onClose={() => { setProduct(undefined) }} noHeader verticalAlign="center">
                 <ProductView product={product} reviews={reviews} />
             </Dialog>
         </BrowserView>
