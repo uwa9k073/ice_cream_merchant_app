@@ -59,9 +59,12 @@ const useCartStore = create<CartState>()(persist(devtools((set, get) => ({
             ...item,
             count: item.count * 2,
         }));
+        const newTotalPrice = newCartItems.reduce(
+            (total, item) => total + item.count * item.product.price,
+            0);
         set({
             cart: newCartItems,
-            totalPrice: 0
+            totalPrice: newTotalPrice
         })
     },
     increaseProductCount: (name: string) => {
