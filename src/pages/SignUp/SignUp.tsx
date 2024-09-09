@@ -43,7 +43,7 @@ const SignUp: React.FC = () => {
                             <label htmlFor="email">PhoneNumber</label>
                         </div>
                         <div className={styles.input}>
-                            <input placeholder="1111" type="password" name="password" required onChange={handleChange} />
+                            <input placeholder="1111" required onChange={handleChange} />
                             <label htmlFor="password">Пароль</label>
                         </div>
                     </div>

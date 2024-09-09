@@ -32,7 +32,7 @@ const SignIn: React.FC = () => {
                                 <label htmlFor="email">Email</label>
                             </div>
                             <div className={styles.input}>
-                                <input placeholder=" " type="password" name="password" id="password" required onChange={(e) => setPassword(e.target.value)} />
+                                <input placeholder=" " required onChange={(e) => setPassword(e.target.value)} />
                                 <label htmlFor="password">Пароль</label>
                             </div>
                         </div>

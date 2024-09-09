@@ -14,21 +14,21 @@ const router = createHashRouter([
     path: "/",
     element: (
       <>
-        <Products />
+        <Favorites />
       </>
     )
   },
   {
     path: "/cart",
-    element: <><Cart /></>
-  },
-  {
-    path: "/about",
     element: <><AboutUs /></>
   },
   {
+    path: "/about",
+    element: <><Cart /></>
+  },
+  {
     path: "/favorites",
-    element: <><Favorites /></>
+    element: <><Products /></>
   }, {
     path: '/signin',
     element: <><SignIn /></>

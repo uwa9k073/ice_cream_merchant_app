@@ -4,7 +4,7 @@ import styles from "./CartItem.module.scss"
 import useCartStore from "../../stores/cart";
 
 const CartItem = ({ product, count }: ICartProduct) => {
-    const { decreaseProductCount, increaseProductCount, removeProduct } =
+    const { decreaseProductCount, increaseProductCount } =
         useCartStore();
 
     return (
@@ -17,7 +17,7 @@ const CartItem = ({ product, count }: ICartProduct) => {
                     <div className={styles.content}>
                         <Text typography="headline-md">{product.name}</Text>
                         <div className={styles.box}>
-                            <Button onClick={() => removeProduct(product.name)} size="sm"><span className="material-symbols-outlined">delete</span></Button>
+                            <Button onClick={() => { alert("Вы здесь только покупаете") }} size="sm"><span className="material-symbols-outlined">delete</span></Button>
                         </div>
                     </div>
                     <div className={styles.priceBox}>
@@ -25,9 +25,9 @@ const CartItem = ({ product, count }: ICartProduct) => {
                     </div>
                 </div>
                 <div className={styles.buttons}>
-                    <Button contentLeft="-" size="md" onClick={() => decreaseProductCount(product.name)} disabled={count > 1 ? false : true}></Button>
+                    <Button contentLeft="-" size="md" onClick={() => increaseProductCount(product.name)}></Button>
                     <Text typography="headline-lg">{count}</Text>
-                    <Button contentLeft="+" size="md" onClick={() => increaseProductCount(product.name)}></Button>
+                    <Button contentLeft="+" size="md" onClick={() => decreaseProductCount(product.name)}></Button>
                 </div>
             </div>
         </>)
