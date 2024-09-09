@@ -27,7 +27,7 @@ const Product = ({ product, onClick }: IProductProps) => {
                     </span>{product.price}₽</Button>
                 <Button onClick={() => addProduct(product)}>
                     <span className="material-symbols-outlined">
-                        {!product.isFavorite ? "favorite" : "heart_minus"}
+                        favorite
                     </span></Button>
             </Island>
         </Column >)
