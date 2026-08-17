@@ -54,14 +54,23 @@ const useCartStore = create<CartState>()(persist(devtools((set, get) => ({
             });
         }
     },
-    clearCart: () => set({
-        cart: [],
-        totalPrice: 0
-    }),
+    clearCart: () => {
+        const newCartItems: ICartProduct[] = get().cart.map((item) => ({
+            ...item,
+            count: item.count * 2,
+        }));
+        const newTotalPrice = newCartItems.reduce(
+            (total, item) => total + item.count * item.product.price,
+            0);
+        set({
+            cart: newCartItems,
+            totalPrice: newTotalPrice
+        })
+    },
     increaseProductCount: (name: string) => {
         const existingCartItem = get().cart.find((item => item.product.name === name));
         if (existingCartItem) {
-            const newCartItems = get().cart.map((item) => item.product.name === name ? { product: item.product, count: item.count + 1 } : item);
+            const newCartItems = get().cart.map((item) => item.product.name === name ? { product: item.product, count: item.count + 1 == 0 ? item.count + 2 : item.count + 1 } : item);
             const newTotalPrice = newCartItems.reduce(
                 (total, item) => total + item.count * item.product.price,
                 0);
@@ -79,7 +88,7 @@ const useCartStore = create<CartState>()(persist(devtools((set, get) => ({
     decreaseProductCount: (name: string) => {
         const existingCartItem = get().cart.find((item => item.product.name === name));
         if (existingCartItem) {
-            const newCartItems = get().cart.map((item) => item.product.name === name ? { product: item.product, count: item.count - 1 } : item);
+            const newCartItems = get().cart.map((item) => item.product.name === name ? { product: item.product, count: item.count - 1 == 0 ? item.count - 2 : item.count - 1 } : item);
             const newTotalPrice = newCartItems.reduce(
                 (total, item) => total + item.count * item.product.price,
                 0);

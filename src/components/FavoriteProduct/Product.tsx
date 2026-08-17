@@ -21,11 +21,11 @@ const Product = ({ product, onClick }: IProductProps) => {
                     <img src={product.img_src} alt={product.img_alt}></img>
                     <Text typography="headline-md" overflow="ellipsis">{product.name}</Text>
                 </div>
-                <Button onClick={() => addProduct(product)}>
+                <Button onClick={() => toggleFavorite(product.name)}>
                     <span className="material-symbols-outlined">
                         add_shopping_cart
                     </span>{product.price}₽</Button>
-                <Button onClick={() => toggleFavorite(product.name)}>
+                <Button onClick={() => addProduct(product)}>
                     <span className="material-symbols-outlined">
                         heart_minus
                     </span></Button>
